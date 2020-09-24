@@ -16,6 +16,7 @@ public class AutomatedTask {
          wd.findElement(By.partialLinkText("Images")).click();
          wd.findElement(By.name("q")).sendKeys("Selenium Download");
          wd.findElement(By.xpath("//*[@id=\"sbtc\"]/button")).click();
+         wd.findElement(By.cssSelector("#islrg > div.islrc > div:nth-child(1) > a.wXeWr.islib.nfEiy.mM5pbd > div.bRMDJf.islir")).click();
         // wd.findElement(By.className("tg7LZd")).click();
        
      /*    System.setProperty("webdriver.edge.driver", "D:\\msedgedriver.exe");
