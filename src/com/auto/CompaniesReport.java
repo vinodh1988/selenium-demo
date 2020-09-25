@@ -8,14 +8,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class CompaniesReport {
            public static void main(String n[]) {
         	   
-        	     String companies[]= {"Oracle","Microsoft","Amazon","TCS", "Infosys","Cognizant","Accenture"};
+        	     String companies[]= {"Oracle","Microsoft","Amazon","TCS", "Infosys","Cognizant"};
         	    		
         	     System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
                  WebDriver wd=new ChromeDriver();
                  wd.get("http://www.google.co.in");
                  
-                 wd.findElement(By.name("q")).sendKeys(companies[0]+" wiki");
+                 for(String x:companies) {
+                 wd.findElement(By.name("q")).sendKeys(x+" wiki");
                  wd.findElement(By.name("q")).sendKeys(Keys.ENTER);
-        	    
+                 wd.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/a")).click();
+                 wd.navigate().back();
+                 wd.findElement(By.name("q")).clear();
+                 }
+                 
            }
 }
