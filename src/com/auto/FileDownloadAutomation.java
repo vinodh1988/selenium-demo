@@ -1,9 +1,12 @@
 package com.auto;
 
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
@@ -29,6 +32,10 @@ public class FileDownloadAutomation {
     	  options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
     	
     	  WebDriver wd = new ChromeDriver(options);
-
+         
+    	  wd.get("http://www.ignouhelp.in/ignou-ibo-01-study-material/");
+    	  
+    	  List<WebElement> l=wd.findElements(By.xpath("//*[@id=\"post-7531\"]/div/table/tbody/tr"));
+    	  
       }
 }
