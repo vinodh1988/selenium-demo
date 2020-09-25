@@ -37,5 +37,9 @@ public class FileDownloadAutomation {
     	  
     	  List<WebElement> l=wd.findElements(By.xpath("//*[@id=\"post-7531\"]/div/table/tbody/tr"));
     	  
+    	  for(int i=1;i<l.size();i++) {
+    		  System.out.println(l.get(i).getAttribute("innerHTML"));
+    		  System.out.println("_______________________________________________________");
+    	  }
       }
 }
