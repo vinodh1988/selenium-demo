@@ -17,5 +17,8 @@ public class ExplicitWait {
       
          
           wd.findElement(By.cssSelector("#selector")).sendKeys("India");
+          
+          wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-reactid=\"144\"] li")));
+          wd.findElement(By.cssSelector("div[data-reactid=\"144\"] li")).click();
       }
 }
