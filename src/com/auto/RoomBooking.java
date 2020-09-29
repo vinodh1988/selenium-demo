@@ -26,6 +26,23 @@ public class RoomBooking {
       	   wb2.click();
       	   wd.findElement(By.xpath("//*[@data-date=\"2020-09-30\"]")).click();
     	   wd.findElement(By.xpath("//*[@data-date=\"2020-10-03\"]")).click();
+    	   
+    	   wd.findElement(By.id("xp__guests__toggle")).click();
+    	   for(int i=3;i<=8;i++)
+        	   wd.findElement(By.xpath("//*[@data-bui-ref=\"input-stepper-add-button\"]")).click();
+           for(int i=1;i<=4;i++)
+        	   wd.findElement(By.xpath("//*[@aria-label=\"Increase number of Children\"]")).click();
+        	   
+           wd.findElement(By.xpath("//*[@aria-label=\"Child 1 age\"]/*[@value='3']")).click();
+    	   wd.findElement(By.xpath("//*[@aria-label=\"Child 2 age\"]/*[@value='7']")).click();
+    	   wd.findElement(By.xpath("//*[@aria-label=\"Child 3 age\"]/*[@value='9']")).click();
+    	   wd.findElement(By.xpath("//*[@aria-label=\"Child 4 age\"]/*[@value='12']")).click();
+    	   
+    	   for(int i=2;i<=6;i++)
+    		   wd.findElement(By.xpath("//*[@aria-label=\"Increase number of Rooms\"]")).click();
+    	   
+    		wd.findElement(By.cssSelector(".sb-searchbox__button")).click(); 
+    	   
          }
          else {
         	 System.out.println("Room cannot be booked");
