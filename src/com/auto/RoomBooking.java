@@ -17,8 +17,19 @@ public class RoomBooking {
          wd.findElement(By.id("ss")).sendKeys("Chennai");
          //Thread.sleep(5000);
        
-         WebElement wb=wd.findElement(By.xpath("//*[@id=\"frm\"]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]"));
-         System.out.println(wb.getAttribute("innerHTML"));
+        // WebElement wb=wd.findElement(By.xpath("//*[@id=\"frm\"]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]"));
+        //  System.out.println(wb.getAttribute("innerHTML"));
+         
+         WebElement wb2=wd.findElement(By.xpath("//span[@class=\"search_hl_name\"]"));
+         
+         if(wb2.getText().toLowerCase().equals("Chennai".toLowerCase())) {
+      	   wb2.click();
+      	   wd.findElement(By.xpath("//*[@data-date=\"2020-09-30\"]")).click();
+    	   wd.findElement(By.xpath("//*[@data-date=\"2020-10-03\"]")).click();
+         }
+         else {
+        	 System.out.println("Room cannot be booked");
+         }
 	}
 
 }
